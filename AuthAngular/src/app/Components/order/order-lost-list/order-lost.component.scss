@@ -1,0 +1,38 @@
+
+.table-block {
+  padding: 10px 50px;
+  font-size: 14px;
+  width: 100%;
+  table {
+    width: 100%;
+  }
+  .table-actions {
+    display: flex;
+    flex-direction: column;
+    button {
+      margin: 2px;
+    }
+  }
+
+  .filter-block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .filter-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    .mat-mdc-form-field {
+      margin-right: 10px;
+    }
+  }
+
+  .example-button-row {
+    display: flex;
+    padding-top: 15px;
+    button {
+      margin-right: 10px;
+    }
+  }
+
+}

@@ -1,0 +1,70 @@
+<header class="header">
+  <!-- ==== NAVBAR ==== -->
+  <nav class="nav">
+    <div class="logo">
+      <h2 routerLink="/Home" style="cursor: pointer;">CARGO</h2>
+    </div>
+
+    <div class="nav_menu" id="nav_menu">
+      <button class="close_btn" id="close_btn">
+        <i class="ri-close-fill"></i>
+      </button>
+
+      <ul class="nav_menu_list">
+<!--        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">-->
+<!--          <a routerLink="/User" class="nav_menu_link">User</a>-->
+<!--        </li>-->
+
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">
+          <button style="margin-left: 5px" mat-stroked-button color="primary" (click)="openDialog()">Цена</button>
+        </li>
+
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">
+          <a routerLink="/order-list" class="nav_menu_link">Все заявки</a>
+        </li>
+
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">
+          <a routerLink="/order-lost" class="nav_menu_link">потерянные товары</a>
+        </li>
+
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">
+          <div [matBadge]="orderNumber" matBadgeOverlap="false" class="demo-section">
+            <a routerLink="/new-orders" class="nav_menu_link" (click)="orderNumber = 0">Новые заявки</a>
+          </div>
+        </li>
+
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">
+          <a routerLink="/order-store" class="nav_menu_link">Приемка</a>
+        </li>
+
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">
+          <a routerLink="/order-outcome" class="nav_menu_link">Выдача</a>
+        </li>
+
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn" style="width: 150px">
+          <p style="margin-bottom: 0"><b style="font-size: 18px">1$ = {{tenge  | currency }} ₸</b></p>
+          <p style="margin-bottom: 0"><b style="font-size: 18px">1кг = {{cost_per_unit}} $ </b></p>
+        </li>
+
+        <li class="nav_menu_item" *ngIf="isLoggedIn" style="cursor: pointer;">
+          <a (click)="signOut()" class="nav_menu_link">Выйти</a>
+        </li>
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="!isLoggedIn">
+          <a routerLink="/SignIn" class="nav_menu_link">Войти</a>
+        </li>
+        <li class="nav_menu_item" routerLinkActive="active" *ngIf="!isLoggedIn">
+          <a routerLink="/SignUp" class="nav_menu_link">Регистрация</a>
+        </li>
+        <li class="nav_menu_item" *ngIf="isLoggedIn">
+          <p class="toggle_btn">
+          </p>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr>
+</header>
+<div class="cargo-container">
+  <router-outlet></router-outlet>
+</div>
+

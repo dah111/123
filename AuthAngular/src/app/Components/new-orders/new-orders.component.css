@@ -1,0 +1,11 @@
+/*.table-block {*/
+/*  padding: 10px 50px;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*}*/
+.status-code {
+  color: #2b50c7;
+}
+.accept-button {
+  color: #008000!important;
+}
